@@ -7,8 +7,21 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * Cliente de eco simple para pruebas de conectividad con {@link EchoServer} u
+ * otros servidores de texto. Lee desde stdin, envía cada línea al servidor y
+ * muestra la respuesta recibida.
+ */
 public class EchoClient {
 
+    /**
+     * Inicia una conexión TCP por defecto a {@code 127.0.0.1:35000} y reenvía
+     * lo que se escriba por la entrada estándar al servidor, imprimiendo su
+     * respuesta en consola.
+     *
+     * @param args no se utilizan
+     * @throws IOException si ocurre un error al conectar o transmitir datos
+     */
     public static void main(String[] args) throws IOException {
         Socket echSocket = null;
         PrintWriter out = null;
